@@ -1,0 +1,38 @@
+var img;
+var fonte;
+var tela = 1;
+var img1;
+var posiçãox;
+var posiçãoy;
+var velocidade;
+function preload() {
+  fonte = loadFont('fontes/SignikaNegative-Light.ttf');
+  img = loadImage('imagens/imagem2.png');
+  img1= loadImage ('imagens/rocket.png');
+  img2=loadImage('imagens/rocket2.png');
+}
+
+function setup() {
+  createCanvas(800, 500);
+  image(img, 0, 0);
+  textFont(fonte, 24);
+  posiçãox= -160
+  posiçãoy= height/3
+  posiçãox1= 960
+  velocidade=1;
+}
+
+function draw() {
+  background(img);
+  
+  if(posiçãox < width){
+    
+    image(img1, posiçãox, posiçãoy, 150, 150);
+  posiçãox= posiçãox+velocidade;
+    
+  } else {
+    
+        image(img2,posiçãox1, posiçãoy, 150, 150);
+    posiçãox1=posiçãox1-velocidade;
+    
+  }
